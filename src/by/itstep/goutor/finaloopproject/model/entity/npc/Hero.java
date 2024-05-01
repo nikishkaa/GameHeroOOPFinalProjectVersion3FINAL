@@ -3,7 +3,6 @@ package by.itstep.goutor.finaloopproject.model.entity.npc;
 public class Hero extends NPC {
     public static final int DEFAULT_MONEY = 100;
     public static final int DEFAULT_MANA = 100;
-    public static final int DEFAULT_LEVEL = 10;
     public static final int DEFAULT_SPECIAL_DAMAGE = 0;
     public static final int ARTIFACT_SLOT = 2;
     public static final int DEFAULT_ARTIFACT_DAMAGE = 0;
@@ -11,7 +10,6 @@ public class Hero extends NPC {
 
     private int wallet;
     private int mana;
-    private int level;
     private int specialDamage;
     private int artifactSlot;
     private int artifactDamage;
@@ -21,7 +19,6 @@ public class Hero extends NPC {
     public Hero() {
         wallet = DEFAULT_MONEY;
         mana = DEFAULT_MANA;
-        level = DEFAULT_LEVEL;
         specialDamage = DEFAULT_SPECIAL_DAMAGE;
         artifactSlot = ARTIFACT_SLOT;
         artifactDamage = DEFAULT_ARTIFACT_DAMAGE;
@@ -31,8 +28,7 @@ public class Hero extends NPC {
     public Hero(String name, boolean isAlive, int health, int baseDamage, int level,
                 int mana, int wallet, int specialDamage, String artifactDescription,
                 int artifactSlot, int artifactDamage) {
-        super(name, isAlive, health, baseDamage);
-        this.level = level;
+        super(name, isAlive, health, baseDamage, level);
         this.mana = mana;
         this.wallet = wallet;
         this.specialDamage = specialDamage;
@@ -55,14 +51,6 @@ public class Hero extends NPC {
 
     public void setMana(int mana) {
         this.mana = mana;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getSpecialDamage() {
@@ -100,7 +88,6 @@ public class Hero extends NPC {
     @Override
     public String toString() {
         return super.toString() +
-                ", level = " + level +
                 ", mana = " + mana +
                 ", wallet = " + wallet +
                 ", specialDamage = " + specialDamage +

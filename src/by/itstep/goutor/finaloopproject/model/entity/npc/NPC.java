@@ -1,24 +1,28 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
 public class NPC {
+    public static final int DEFAULT_LEVEL = 10;
+
     private String name;
     private boolean isAlive;
     private int health;
-    private int BaseDamage;
-
+    private int baseDamage;
+    private int level;
 
     public NPC() {
         name = "no name";
         isAlive = false;
         health = 0;
-        BaseDamage = 0;
+        baseDamage = 0;
+        level = DEFAULT_LEVEL;
     }
 
-    public NPC(String name, boolean isAlive, int health, int BaseDamage) {
+    public NPC(String name, boolean isAlive, int health, int baseDamage, int level) {
         this.name = name;
         this.isAlive = isAlive;
         this.health = health;
-        this.BaseDamage = BaseDamage;
+        this.baseDamage = baseDamage;
+        this.level = level;
     }
 
     public String getName() {
@@ -46,11 +50,19 @@ public class NPC {
     }
 
     public int getBaseDamage() {
-        return BaseDamage;
+        return baseDamage;
     }
 
     public void setBaseDamage(int baseDamage) {
-        BaseDamage = baseDamage;
+        this.baseDamage = baseDamage;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     @Override
@@ -58,6 +70,7 @@ public class NPC {
         return "name = " + name +
                 ", isAlive = " + isAlive +
                 ", health = " + health +
-                ", BaseDamage = " + BaseDamage;
+                ", BaseDamage = " + baseDamage
+                + ", level = " + level;
     }
 }
