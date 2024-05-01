@@ -13,7 +13,7 @@ public class Archer extends Hero {
                   int artifactSlot, int artifactDamage, int archerDamage) {
 
         super(name, isAlive, health, baseDamage, level, mana,
-                wallet, specialDamage, artifactDescription, artifactSlot, artifactDamage);
+                wallet, specialDamage + archerDamage, artifactDescription, artifactSlot, artifactDamage);
         this.archerDamage = archerDamage;
     }
 

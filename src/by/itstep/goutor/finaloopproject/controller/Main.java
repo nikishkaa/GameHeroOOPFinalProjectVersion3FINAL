@@ -21,7 +21,7 @@ public class Main {
         LOGGER.setLevel(Level.DEBUG);
         Archer archer1 = new Archer("123", true, 100,
                 100, 100, 10, 10, 10
-                , "123", 2, 2, 3);
+                , "123", 2, 2, 2);
 
 
         Knight knight1 = new Knight("123", true, 100,

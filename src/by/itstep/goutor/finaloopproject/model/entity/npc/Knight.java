@@ -13,7 +13,7 @@ public class Knight extends Hero {
                   int artifactSlot, int artifactDamage, int knightDamage) {
 
         super(name, isAlive, health, baseDamage, level, mana,
-                wallet, specialDamage, artifactDescription, artifactSlot, artifactDamage);
+                wallet, specialDamage + knightDamage, artifactDescription, artifactSlot, artifactDamage);
         this.knightDamage = knightDamage;
     }
 
