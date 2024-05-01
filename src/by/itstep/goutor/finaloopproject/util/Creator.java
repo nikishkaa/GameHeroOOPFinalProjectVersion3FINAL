@@ -26,10 +26,10 @@ public class Creator {
 
     public static Group getBossGroup() {
         Dragon dragon1 = new Dragon("123", true, 100,
-                100, 100, 100, 100, 100.0);
+                100, 100, RndInit.getBossSurvivability(), 100, 100.0);
 
         Hydra hydra1 = new Hydra("123", true, 100,
-                100, 100, 100, 3);
+                100, 100, RndInit.getBossSurvivability(), 3);
 
         NPC[] npcGroup = new NPC[]{dragon1, hydra1};
 
