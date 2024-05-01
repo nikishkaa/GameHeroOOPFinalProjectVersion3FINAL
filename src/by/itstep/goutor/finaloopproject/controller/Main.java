@@ -2,6 +2,7 @@ package by.itstep.goutor.finaloopproject.controller;
 
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.*;
+import by.itstep.goutor.finaloopproject.util.UserUI;
 import by.itstep.goutor.finaloopproject.view.Printer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -37,7 +38,10 @@ public class Main {
         Group group = new Group(npc);
 
         Printer.print(group.toString());
+        Printer.print(UserUI.getUserUI());
+
         LOGGER.info(group.toString());
+        LOGGER.info(UserUI.getUserUI());
 
     }
 }
