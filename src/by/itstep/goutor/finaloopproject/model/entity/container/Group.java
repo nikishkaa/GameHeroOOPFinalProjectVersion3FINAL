@@ -29,7 +29,7 @@ public class Group {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder("\nList of npc\n");
 
         for (NPC npcGroup : npc) {
             builder.append(npcGroup).append("\n");
