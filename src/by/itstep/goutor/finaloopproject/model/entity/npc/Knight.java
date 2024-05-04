@@ -9,11 +9,11 @@ public class Knight extends Hero {
     }
 
     public Knight(String name, boolean isAlive, int health, int baseDamage, int level,
-                  int mana, int wallet, int specialDamage, String artifactDescription,
+                  int mana, int wallet, int specialDamage,
                   int artifactSlot, int artifactDamage, int knightDamage) {
 
         super(name, isAlive, health, baseDamage, level, mana,
-                wallet, specialDamage + knightDamage, artifactDescription, artifactSlot, artifactDamage);
+                wallet, specialDamage + knightDamage, artifactSlot, artifactDamage);
         this.knightDamage = knightDamage;
     }
 

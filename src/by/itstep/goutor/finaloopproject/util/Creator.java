@@ -8,13 +8,13 @@ import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 public class Creator {
     public static Group getHeroGroup() {
         Archer archer1 = new Archer("123", true, 100,
-                100, 100, 10, 10, 10
-                , "123", 2, 2, 2);
+                100, 100, 100, 10, 10
+                , 2, 0, 2);
 
 
         Knight knight1 = new Knight("123", true, 100,
-                100, 100, 10, 10, 10
-                , "123", 2, 2, 3);
+                100, 100, 100, 10, 10
+                , 2, 3, 3);
 
         NPC[] npcGroup = new NPC[]{archer1, knight1};
 

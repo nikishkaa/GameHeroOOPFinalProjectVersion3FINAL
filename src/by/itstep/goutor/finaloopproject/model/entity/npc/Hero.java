@@ -1,5 +1,8 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
+import by.itstep.goutor.finaloopproject.model.ability.Ability;
+import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
+
 public class Hero extends NPC {
     public static final int DEFAULT_MONEY = 100;
     public static final int DEFAULT_MANA = 100;
@@ -13,8 +16,9 @@ public class Hero extends NPC {
     private int specialDamage;
     private int artifactSlot;
     private int artifactDamage;
-    private String artifactDescription;
 
+    private Artifact artifact;
+    private Ability ability;
 
     public Hero() {
         wallet = DEFAULT_MONEY;
@@ -22,17 +26,15 @@ public class Hero extends NPC {
         specialDamage = DEFAULT_SPECIAL_DAMAGE;
         artifactSlot = ARTIFACT_SLOT;
         artifactDamage = DEFAULT_ARTIFACT_DAMAGE;
-        artifactDescription = "No artifact";
     }
 
     public Hero(String name, boolean isAlive, int health, int baseDamage, int level,
-                int mana, int wallet, int specialDamage, String artifactDescription,
+                int mana, int wallet, int specialDamage,
                 int artifactSlot, int artifactDamage) {
         super(name, isAlive, health, baseDamage, level);
         this.mana = mana;
         this.wallet = wallet;
         this.specialDamage = specialDamage;
-        this.artifactDescription = artifactDescription;
         this.artifactSlot = artifactSlot;
         this.artifactDamage = artifactDamage;
     }
@@ -74,16 +76,31 @@ public class Hero extends NPC {
     }
 
     public void setArtifactDamage(int artifactDamage) {
-        this.artifactDamage = artifactDamage;
+        this.artifactDamage = artifactDamage + artifact.getUpBaseDamage();
     }
 
-    public String getArtifactDescription() {
-        return artifactDescription;
+
+    public Artifact getArtifact() {
+        return artifact;
     }
 
-    public void setArtifactDescription(String artifactDescription) {
-        this.artifactDescription = artifactDescription;
+    public void setArtifact(Artifact artifact) {
+        if (artifact.getPrice() <= wallet && artifact.getSlot() <= artifactSlot) {
+            this.artifact = artifact;
+            wallet -= artifact.getPrice();
+            artifactSlot -= artifact.getSlot();
+        } else {
+            //
+        }
     }
+
+    public void setAbility(Ability ability) {
+        if (ability.getManaCost() <= mana) {
+            this.ability = ability;
+            mana -= ability.getManaCost();
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -91,8 +108,9 @@ public class Hero extends NPC {
                 ", mana = " + mana +
                 ", wallet = " + wallet +
                 ", specialDamage = " + specialDamage +
-                ", artifactDescription = " + artifactDescription +
                 ", artifactSlot = " + artifactSlot +
-                ", artifactDamage = '" + artifactDamage;
+                ", artifactDamage = " + artifactDamage +
+                ", Artifact = " + artifact +
+                ", ability description = " + ability;
     }
 }
