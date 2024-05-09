@@ -2,7 +2,7 @@ package by.itstep.goutor.finaloopproject.model.entity.npc;
 
 public class Archer extends Hero {
     public static final int DEFAULT_ARCHER_DAMAGE = 15;
-    protected int archerDamage;
+    public int archerDamage;
 
     public Archer() {
         archerDamage = DEFAULT_ARCHER_DAMAGE;

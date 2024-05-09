@@ -2,7 +2,7 @@ package by.itstep.goutor.finaloopproject.model.entity.npc;
 
 public class Knight extends Hero {
     public static final int DEFAULT_KNIGHT_DAMAGE = 10;
-    private int knightDamage;
+    public int knightDamage;
 
     public Knight() {
         knightDamage = DEFAULT_KNIGHT_DAMAGE;

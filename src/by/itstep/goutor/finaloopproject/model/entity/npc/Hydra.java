@@ -2,7 +2,7 @@ package by.itstep.goutor.finaloopproject.model.entity.npc;
 
 public class Hydra extends Boss {
     public static final int DEFAULT_HEAD_COUNT = 1;
-    private int headCount;
+    public int headCount;
 
     public Hydra() {
         headCount = DEFAULT_HEAD_COUNT;

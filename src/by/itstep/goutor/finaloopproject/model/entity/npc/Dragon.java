@@ -1,8 +1,8 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
 public class Dragon extends Boss {
-    int fireDamage;
-    double fireRange;
+   public int fireDamage;
+    public double fireRange;
 
     public Dragon() {
         fireDamage = 0;

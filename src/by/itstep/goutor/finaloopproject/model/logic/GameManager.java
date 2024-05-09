@@ -21,10 +21,9 @@ public class GameManager {
 
     public static int getVinStat(Group group) {
         int stat = 0;
-
         for (NPC t : group.getGroup()) {
             stat += t.getBaseDamage();
-//            stat += t.g
+            stat += t.getSpecialDamage();
         }
 
         return stat;
