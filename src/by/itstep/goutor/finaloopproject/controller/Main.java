@@ -41,6 +41,7 @@ public class Main {
         BigAxe bigAxe = new BigAxe("123", 10, 2, 10, 10);
         Ability ability = Ability.FLYING;
 
+
         archer1.setArtifact(bigAxe);
         archer1.setAbility(ability);
 
