@@ -23,7 +23,7 @@ public class GameManager {
         int stat = 0;
         for (NPC t : group.getGroup()) {
             stat += t.getBaseDamage();
-            stat += t.getSpecialDamage();
+            //! stat += t.getSpecialDamage();
         }
 
         return stat;
