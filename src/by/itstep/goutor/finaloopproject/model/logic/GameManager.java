@@ -26,6 +26,7 @@ public class GameManager {
             //! stat += t.getSpecialDamage();
         }
 
+
         return stat;
     }
 
