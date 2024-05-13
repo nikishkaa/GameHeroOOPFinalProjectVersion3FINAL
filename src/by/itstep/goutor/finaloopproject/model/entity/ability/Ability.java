@@ -1,4 +1,4 @@
-package by.itstep.goutor.finaloopproject.model.ability;
+package by.itstep.goutor.finaloopproject.model.entity.ability;
 
 public enum Ability {
     FLYING("Flying ability", 50),

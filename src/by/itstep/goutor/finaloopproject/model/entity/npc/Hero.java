@@ -1,6 +1,6 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
-import by.itstep.goutor.finaloopproject.model.ability.Ability;
+import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
 import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
 
 public class Hero extends NPC {

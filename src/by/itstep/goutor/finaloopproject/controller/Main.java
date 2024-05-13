@@ -1,6 +1,6 @@
 package by.itstep.goutor.finaloopproject.controller;
 
-import by.itstep.goutor.finaloopproject.model.ability.Ability;
+import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
 import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
