@@ -90,7 +90,7 @@ public class Hero extends NPC {
             wallet -= artifact.getPrice();
             artifactSlot -= artifact.getSlot();
         } else {
-            //
+            this.artifact = null;
         }
     }
 

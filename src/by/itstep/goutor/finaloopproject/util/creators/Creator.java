@@ -1,7 +1,9 @@
-package by.itstep.goutor.finaloopproject.util;
+package by.itstep.goutor.finaloopproject.util.creators;
 
+import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.*;
+import by.itstep.goutor.finaloopproject.util.RndInit;
 
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
@@ -11,10 +13,13 @@ public class Creator {
                 100, 100, 100, 10, 10
                 , 2, 0, 2);
 
-
         Knight knight1 = new Knight("123", true, 100,
                 100, 100, 100, 10, 10
-                , 2, 3, 3);
+                , 2, 0, 3);
+
+
+        knight1.setArtifact(ArtifactCreator.initBigAxe());
+        knight1.setAbility(Ability.FLYING);
 
         NPC[] npcGroup = new NPC[]{archer1, knight1};
 

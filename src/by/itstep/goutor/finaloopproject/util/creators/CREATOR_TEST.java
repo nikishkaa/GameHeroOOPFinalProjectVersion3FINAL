@@ -1,7 +1,6 @@
-package by.itstep.goutor.finaloopproject.util;
+package by.itstep.goutor.finaloopproject.util.creators;
 
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Hero;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Knight;
 import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
 

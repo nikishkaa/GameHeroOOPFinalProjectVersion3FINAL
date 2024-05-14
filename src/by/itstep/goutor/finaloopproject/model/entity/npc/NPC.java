@@ -68,7 +68,7 @@ public class NPC {
 
 
 //    private Hero hero;
-
+//
 //    public int getSpecialDamage() {
 //        if (hero != null) {
 //            return hero.getSpecialDamage();

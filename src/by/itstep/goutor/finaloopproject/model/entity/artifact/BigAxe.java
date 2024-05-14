@@ -4,7 +4,7 @@ public class BigAxe extends Artifact {
     private int attackSpeed;
 
     public BigAxe() {
-        attackSpeed = 0;
+        attackSpeed = 2;
     }
 
     public BigAxe(String name, int price, int slot, int upBaseDamage, int attackSpeed) {

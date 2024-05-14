@@ -5,7 +5,7 @@ import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
 import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
-import by.itstep.goutor.finaloopproject.util.Creator;
+import by.itstep.goutor.finaloopproject.util.creators.Creator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
 import by.itstep.goutor.finaloopproject.view.Printer;
 import org.apache.log4j.BasicConfigurator;

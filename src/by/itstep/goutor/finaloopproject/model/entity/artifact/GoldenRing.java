@@ -1,13 +1,13 @@
 package by.itstep.goutor.finaloopproject.model.entity.artifact;
 
-public class Ring extends Artifact {
+public class GoldenRing extends Artifact {
     public double manaUp;
 
-    public Ring() {
-        manaUp = 1.5;
+    public GoldenRing() {
+        manaUp = 1.7;
     }
 
-    public Ring(String name, int price, int slot, int upBaseDamage, double manaUp) {
+    public GoldenRing(String name, int price, int slot, int upBaseDamage, double manaUp) {
         super(name, price, slot, upBaseDamage);
         this.manaUp = manaUp;
     }
@@ -22,7 +22,7 @@ public class Ring extends Artifact {
 
     @Override
     public String toString() {
-        return "Ring{" + super.toString() +
+        return "GoldenRing{" + super.toString() +
                 ", manaUp = " + manaUp + '}';
     }
 }
