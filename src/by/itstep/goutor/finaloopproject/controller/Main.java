@@ -47,6 +47,7 @@ public class Main {
         archer1.setArtifact(bigAxe);
         archer1.setAbility(ability);
 
+
         NPC[] npcs = new NPC[]{archer1};
         Group group = new Group(npcs);
 
