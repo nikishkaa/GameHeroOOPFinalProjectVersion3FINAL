@@ -32,6 +32,7 @@ public class Main {
 
         LOGGER.info(UserUI.getUserUI());
 
+
         /*
         For test
         */
