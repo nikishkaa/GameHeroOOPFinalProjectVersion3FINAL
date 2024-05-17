@@ -66,21 +66,6 @@ public class NPC {
     }
 
 
-
-//    private Hero hero;
-//
-//    public int getSpecialDamage() {
-//        if (hero != null) {
-//            return hero.getSpecialDamage();
-//        } else {
-//            return 0;
-//        }
-//    }
-//
-//    public void setHero(Hero hero) {
-//        this.hero = hero;
-//    }
-
     @Override
     public String toString() {
         return "name = " + name +
