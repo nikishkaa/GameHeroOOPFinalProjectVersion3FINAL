@@ -17,7 +17,7 @@ import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
 public class Creator {
     public static Group getHeroGroup() {
-        // Create artifact
+        // Create artifact(with factory method)
         BigAxeCreator bigAxeCreator = new BigAxeCreator();
         BigAxe bigAxe = bigAxeCreator.create();
 
