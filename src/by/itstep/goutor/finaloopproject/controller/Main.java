@@ -36,6 +36,7 @@ public class Main {
         /*
         For test
         */
+
         Archer archer1 = new Archer("123", true, 100,
                 100, 100, 100, 10, 0
                 , 2, 0, 2);

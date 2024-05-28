@@ -1,6 +1,8 @@
 package by.itstep.goutor.finaloopproject.model.logic;
 
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
+import by.itstep.goutor.finaloopproject.model.entity.npc.Hero;
+import by.itstep.goutor.finaloopproject.model.entity.npc.Knight;
 import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
 
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
@@ -23,7 +25,13 @@ public class GameManager {
         int stat = 0;
         for (NPC t : group.getGroup()) {
             stat += t.getBaseDamage();
-            //! stat += t.getSpecialDamage();
+            if (t instanceof Hero) {
+
+
+
+
+
+            }
         }
 
 
