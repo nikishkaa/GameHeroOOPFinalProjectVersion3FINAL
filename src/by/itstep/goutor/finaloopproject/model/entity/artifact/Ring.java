@@ -7,8 +7,8 @@ public class Ring extends Artifact {
         manaUp = 1.5;
     }
 
-    public Ring(String name, int price, int slot, int upBaseDamage, double manaUp) {
-        super(name, price, slot, upBaseDamage);
+    public Ring(String name, int price, int slot, int artifactDamage, double manaUp) {
+        super(name, price, slot, artifactDamage);
         this.manaUp = manaUp;
     }
 

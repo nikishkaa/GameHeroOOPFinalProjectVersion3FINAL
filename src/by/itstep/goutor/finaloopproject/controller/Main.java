@@ -5,6 +5,7 @@ import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
 import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
+import by.itstep.goutor.finaloopproject.model.logic.GameManager;
 import by.itstep.goutor.finaloopproject.util.creators.Creator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
 import by.itstep.goutor.finaloopproject.view.Printer;
@@ -38,11 +39,11 @@ public class Main {
         */
 
         Archer archer1 = new Archer("123", true, 100,
-                100, 100, 100, 10, 0
+                100, 100, 100, 10, 2
                 , 2, 0, 2);
 
 
-        BigAxe bigAxe = new BigAxe("123", 10, 2, 10, 10);
+        BigAxe bigAxe = new BigAxe("123", 10, 2, 4, 10);
         Ability ability = Ability.FLYING;
 
 
@@ -53,6 +54,12 @@ public class Main {
         NPC[] npcs = new NPC[]{archer1};
         Group group = new Group(npcs);
 
+
+        int a = GameManager.getVinStats(group);
+
+
         System.out.println(group);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + a);
+
     }
 }

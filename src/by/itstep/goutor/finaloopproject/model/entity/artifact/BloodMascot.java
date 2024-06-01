@@ -7,8 +7,8 @@ public class BloodMascot extends Artifact {
         healthUp = 10;
     }
 
-    public BloodMascot(String name, int price, int slot, int upBaseDamage, int healthUp) {
-        super(name, price, slot, upBaseDamage);
+    public BloodMascot(String name, int price, int slot, int artifactDamage, int healthUp) {
+        super(name, price, slot, artifactDamage);
         this.healthUp = healthUp;
     }
 

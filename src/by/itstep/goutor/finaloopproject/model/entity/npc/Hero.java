@@ -76,7 +76,7 @@ public class Hero extends NPC {
     }
 
     public void setArtifactDamage(int artifactDamage) {
-        this.artifactDamage = artifactDamage + artifact.getUpBaseDamage();
+        this.artifactDamage = artifactDamage;
     }
 
 
@@ -89,6 +89,7 @@ public class Hero extends NPC {
             this.artifact = artifact;
             wallet -= artifact.getPrice();
             artifactSlot -= artifact.getSlot();
+            setArtifactDamage(artifact.getArtifactDamage());
         } else {
             this.artifact = null;
         }

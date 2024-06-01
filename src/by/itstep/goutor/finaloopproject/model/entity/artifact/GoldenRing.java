@@ -7,8 +7,8 @@ public class GoldenRing extends Artifact {
         manaUp = 1.7;
     }
 
-    public GoldenRing(String name, int price, int slot, int upBaseDamage, double manaUp) {
-        super(name, price, slot, upBaseDamage);
+    public GoldenRing(String name, int price, int slot, int artifactDamage, double manaUp) {
+        super(name, price, slot, artifactDamage);
         this.manaUp = manaUp;
     }
 

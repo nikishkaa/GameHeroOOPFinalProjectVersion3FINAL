@@ -7,8 +7,8 @@ public class BigAxe extends Artifact {
         attackSpeed = 2;
     }
 
-    public BigAxe(String name, int price, int slot, int upBaseDamage, int attackSpeed) {
-        super(name, price, slot, upBaseDamage);
+    public BigAxe(String name, int price, int slot, int artifactDamage, int attackSpeed) {
+        super(name, price, slot, artifactDamage);
         this.attackSpeed = attackSpeed;
     }
 

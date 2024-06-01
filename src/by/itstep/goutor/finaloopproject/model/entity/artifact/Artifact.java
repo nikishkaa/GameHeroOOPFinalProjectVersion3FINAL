@@ -4,20 +4,20 @@ public class Artifact {
     private String name;
     private int price;
     private int slot;
-    private int upBaseDamage;
+    private int artifactDamage;
 
     public Artifact() {
         name = "No name";
         price = 0;
         slot = 0;
-        upBaseDamage = 0;
+        artifactDamage = 0;
     }
 
-    public Artifact(String name, int price, int slot, int upBaseDamage) {
+    public Artifact(String name, int price, int slot, int artifactDamage) {
         this.name = name;
         this.price = price;
         this.slot = slot;
-        this.upBaseDamage = upBaseDamage;
+        this.artifactDamage = artifactDamage;
     }
 
     public String getName() {
@@ -44,12 +44,12 @@ public class Artifact {
         this.slot = slot;
     }
 
-    public int getUpBaseDamage() {
-        return upBaseDamage;
+    public int getArtifactDamage() {
+        return artifactDamage;
     }
 
-    public void setUpBaseDamage(int upBaseDamage) {
-        this.upBaseDamage = upBaseDamage;
+    public void setArtifactDamage(int artifactDamage) {
+        this.artifactDamage = artifactDamage;
     }
 
     @Override
@@ -57,6 +57,6 @@ public class Artifact {
         return "name = " + name +
                 ", price = " + price +
                 ", slot = " + slot +
-                ", up base damage = " + upBaseDamage;
+                ", artifactDamage = " + artifactDamage;
     }
 }
