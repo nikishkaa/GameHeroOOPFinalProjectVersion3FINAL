@@ -3,7 +3,7 @@ package by.itstep.goutor.finaloopproject.model.entity.npc;
 import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
 import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
 
-public class Hero extends NPC {
+public class Hero extends Entity {
     public static final int DEFAULT_MONEY = 100;
     public static final int DEFAULT_MANA = 100;
     public static final int DEFAULT_SPECIAL_DAMAGE = 0;

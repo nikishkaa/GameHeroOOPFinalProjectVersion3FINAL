@@ -46,7 +46,7 @@ public class Creator {
         knight1.setAbility(Ability.FLYING);
 
         // Create array person
-        NPC[] npcGroup = new NPC[]{archer1, knight1};
+        Entity[] npcGroup = new Entity[]{archer1, knight1};
 
         // Create container with person
         Group heroGroup = new Group(npcGroup);
@@ -62,7 +62,7 @@ public class Creator {
         Hydra hydra1 = new Hydra("123", true, 100,
                 100, 100, RndInit.getBossSurvivability(), 3);
 
-        NPC[] npcGroup = new NPC[]{dragon1, hydra1};
+        Entity[] npcGroup = new Entity[]{dragon1, hydra1};
 
         Group bossGroup = new Group(npcGroup);
         LOGGER.info(bossGroup);

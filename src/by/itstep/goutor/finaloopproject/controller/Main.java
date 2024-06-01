@@ -4,7 +4,7 @@ import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
 import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
-import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
+import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 import by.itstep.goutor.finaloopproject.model.logic.GameManager;
 import by.itstep.goutor.finaloopproject.util.creators.Creator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
@@ -51,7 +51,7 @@ public class Main {
         archer1.setAbility(ability);
 
 
-        NPC[] npcs = new NPC[]{archer1};
+        Entity[] npcs = new Entity[]{archer1};
         Group group = new Group(npcs);
 
 

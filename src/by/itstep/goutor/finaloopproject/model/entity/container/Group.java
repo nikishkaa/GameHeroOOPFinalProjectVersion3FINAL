@@ -1,17 +1,17 @@
 package by.itstep.goutor.finaloopproject.model.entity.container;
 
-import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
+import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 
 public class Group {
     public static final int DEFAULT_SIZE = 10;
 
-    private NPC[] npc;
+    private Entity[] npc;
 
     public Group() {
-        npc = new NPC[DEFAULT_SIZE];
+        npc = new Entity[DEFAULT_SIZE];
     }
 
-    public Group(NPC[] npc) {
+    public Group(Entity[] npc) {
         this.npc = npc;
     }
 
@@ -19,11 +19,11 @@ public class Group {
         return npc.length;
     }
 
-    public NPC[] getGroup() {
+    public Entity[] getGroup() {
         return npc;
     }
 
-    public void setGroup(NPC[] npc) {
+    public void setGroup(Entity[] npc) {
         this.npc = npc;
     }
 
@@ -31,7 +31,7 @@ public class Group {
     public String toString() {
         StringBuilder builder = new StringBuilder("\nList of npc\n");
 
-        for (NPC npcGroup : npc) {
+        for (Entity npcGroup : npc) {
             builder.append(npcGroup).append("\n");
         }
 

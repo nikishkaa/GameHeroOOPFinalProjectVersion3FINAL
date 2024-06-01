@@ -4,7 +4,7 @@ import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Hero;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Knight;
-import by.itstep.goutor.finaloopproject.model.entity.npc.NPC;
+import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
@@ -23,6 +23,8 @@ public class GameManager {
     }
 
 
+
+    // FOR TEST DELETE THIS METHOD!!!
     public static int getVinStats(Group hero) {
         return getVinStat(hero);
     }
@@ -30,7 +32,7 @@ public class GameManager {
 
     private static int getVinStat(Group group) {
         int stat = 0;
-        for (NPC t : group.getGroup()) {
+        for (Entity t : group.getGroup()) {
             if (t.isAlive() == true) {
                 stat += t.getBaseDamage();
 

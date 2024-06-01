@@ -1,6 +1,6 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
-public class NPC {
+public class Entity {
     public static final int DEFAULT_LEVEL = 10;
 
     private String name;
@@ -9,7 +9,7 @@ public class NPC {
     private int baseDamage;
     private int level;
 
-    public NPC() {
+    public Entity() {
         name = "no name";
         isAlive = false;
         health = 0;
@@ -17,7 +17,7 @@ public class NPC {
         level = DEFAULT_LEVEL;
     }
 
-    public NPC(String name, boolean isAlive, int health, int baseDamage, int level) {
+    public Entity(String name, boolean isAlive, int health, int baseDamage, int level) {
         this.name = name;
         this.isAlive = isAlive;
         this.health = health;

@@ -1,6 +1,6 @@
 package by.itstep.goutor.finaloopproject.model.entity.npc;
 
-public class Boss extends NPC {
+public class Boss extends Entity {
     private int survivability;
 
     public Boss() {
