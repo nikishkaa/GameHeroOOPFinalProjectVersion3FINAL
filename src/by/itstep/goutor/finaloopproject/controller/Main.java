@@ -6,7 +6,7 @@ import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
 import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 import by.itstep.goutor.finaloopproject.model.logic.GameManager;
-import by.itstep.goutor.finaloopproject.util.creators.Creator;
+import by.itstep.goutor.finaloopproject.util.creators.EntityCreator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
 import by.itstep.goutor.finaloopproject.view.Printer;
 import org.apache.log4j.BasicConfigurator;
@@ -22,16 +22,18 @@ public class Main {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        LOGGER.setLevel(Level.OFF);
+        LOGGER.setLevel(Level.ALL);
 
-        Group heroGroup = Creator.getHeroGroup();
-        Group bossGroup = Creator.getBossGroup();
+        Group heroGroup = EntityCreator.getHeroGroup();
+        Group bossGroup = EntityCreator.getBossGroup();
+
+        boolean vinWithStartStaff = GameManager.getVinHeroBoosWithStartStaff(heroGroup, bossGroup);
 
 
         Printer.print(heroGroup.toString() + bossGroup);
-        Printer.print(UserUI.getUserUI());
+        Printer.print(UserUI.getUserUI(vinWithStartStaff));
 
-        LOGGER.info(UserUI.getUserUI());
+        LOGGER.info(UserUI.getUserUI(vinWithStartStaff));
 
 
         /*
@@ -40,7 +42,7 @@ public class Main {
 
         Archer archer1 = new Archer("123", true, 100,
                 100, 100, 100, 10, 2
-                , 2,  2);
+                , 2, 2);
 
 
         BigAxe bigAxe = new BigAxe("123", 10, 2, 4, 10);
@@ -55,11 +57,11 @@ public class Main {
         Group group = new Group(npcs);
 
 
-        int a = GameManager.getVinStats(group);
+//        int a = GameManager.getVinStats(group);
 
 
         System.out.println(group);
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + a);
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + a);
 
     }
 }

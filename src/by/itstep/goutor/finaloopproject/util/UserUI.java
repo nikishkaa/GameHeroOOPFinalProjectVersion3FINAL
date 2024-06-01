@@ -8,9 +8,10 @@ public class UserUI {
         BUILDER = new StringBuilder();
     }
 
-    public static String getUserUI() {
+    public static String getUserUI(boolean vinWithStartStaff) {
 
-        BUILDER.append("");
+        BUILDER.append("\nWin hero bosses with start staff? ")
+                .append(vinWithStartStaff ? "Yes" : "No");
 
 
         return BUILDER.toString();

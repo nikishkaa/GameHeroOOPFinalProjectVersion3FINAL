@@ -6,24 +6,21 @@ import by.itstep.goutor.finaloopproject.model.entity.npc.*;
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
 public class GameManager {
-    public static boolean getVinHeroBoos(Group hero, Group boss) {
+    public static boolean getVinHeroBoosWithStartStaff(Group hero, Group boss) {
         if (hero == null || boss == null || Group.DEFAULT_SIZE == 0) {
             LOGGER.warn("hero == null || boss == null || Group.DEFAULT_SIZE == 0");
             return false;
         }
-        boolean vin = false;
 
-//        int heroStat = ;
-//        int bossStat = ;
-
-        return vin;
+        return getVinStat(hero) > getVinStat(boss);
     }
 
 
     // FOR TEST DELETE THIS METHOD!!!
-    public static int getVinStats(Group hero) {
-        return getVinStat(hero);
-    }
+
+//    public static int getVinStats(Group hero) {
+//        return getVinStat(hero);
+//    }
 
 
     private static int getVinStat(Group group) {
