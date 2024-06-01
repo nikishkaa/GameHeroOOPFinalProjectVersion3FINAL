@@ -30,13 +30,12 @@ public class Hero extends Entity {
 
     public Hero(String name, boolean isAlive, int health, int baseDamage, int level,
                 int mana, int wallet, int specialDamage,
-                int artifactSlot, int artifactDamage) {
+                int artifactSlot) {
         super(name, isAlive, health, baseDamage, level);
         this.mana = mana;
         this.wallet = wallet;
         this.specialDamage = specialDamage;
         this.artifactSlot = artifactSlot;
-        this.artifactDamage = artifactDamage;
     }
 
     public int getWallet() {
@@ -89,7 +88,7 @@ public class Hero extends Entity {
             this.artifact = artifact;
             wallet -= artifact.getPrice();
             artifactSlot -= artifact.getSlot();
-            setArtifactDamage(artifact.getArtifactDamage());
+           setArtifactDamage(artifact.getArtifactDamage());
         } else {
             this.artifact = null;
         }

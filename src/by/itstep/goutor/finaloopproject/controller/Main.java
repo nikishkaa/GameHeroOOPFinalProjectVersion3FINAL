@@ -40,7 +40,7 @@ public class Main {
 
         Archer archer1 = new Archer("123", true, 100,
                 100, 100, 100, 10, 2
-                , 2, 0, 2);
+                , 2,  2);
 
 
         BigAxe bigAxe = new BigAxe("123", 10, 2, 4, 10);

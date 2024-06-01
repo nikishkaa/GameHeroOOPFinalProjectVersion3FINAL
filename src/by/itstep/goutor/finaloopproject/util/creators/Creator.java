@@ -34,11 +34,11 @@ public class Creator {
         // Create person
         Archer archer1 = new Archer("123", true, 100,
                 100, 100, 100, 10, 10
-                , 2, 0, 2);
+                , 2,  2);
 
         Knight knight1 = new Knight("123", true, 100,
                 100, 100, 100, 10, 10
-                , 2, 0, 3);
+                , 2, 3);
 
 
         // Giv person artifact

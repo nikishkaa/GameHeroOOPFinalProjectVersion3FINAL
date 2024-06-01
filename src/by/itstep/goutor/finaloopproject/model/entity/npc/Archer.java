@@ -10,10 +10,10 @@ public class Archer extends Hero {
 
     public Archer(String name, boolean isAlive, int health, int baseDamage, int level,
                   int mana, int wallet, int specialDamage,
-                  int artifactSlot, int artifactDamage, int archerDamage) {
+                  int artifactSlot, int archerDamage) {
 
         super(name, isAlive, health, baseDamage, level, mana,
-                wallet, specialDamage, artifactSlot, artifactDamage);
+                wallet, specialDamage, artifactSlot);
         this.archerDamage = archerDamage;
     }
 

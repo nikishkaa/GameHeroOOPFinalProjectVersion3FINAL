@@ -1,10 +1,7 @@
 package by.itstep.goutor.finaloopproject.model.logic;
 
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Hero;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Knight;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
+import by.itstep.goutor.finaloopproject.model.entity.npc.*;
 
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
@@ -23,7 +20,6 @@ public class GameManager {
     }
 
 
-
     // FOR TEST DELETE THIS METHOD!!!
     public static int getVinStats(Group hero) {
         return getVinStat(hero);
@@ -33,7 +29,7 @@ public class GameManager {
     private static int getVinStat(Group group) {
         int stat = 0;
         for (Entity t : group.getGroup()) {
-            if (t.isAlive() == true) {
+            if (t.isAlive()) {
                 stat += t.getBaseDamage();
 
                 if (t instanceof Hero) {
@@ -48,6 +44,19 @@ public class GameManager {
                         stat += ((Archer) t).getArcherDamage();
                     }
 
+                }
+
+
+                if (t instanceof Boss) {
+                    stat += ((Boss) t).getSurvivability();
+
+                    if (t instanceof Dragon) {
+                        stat += ((Dragon) t).getFireDamage();
+                    }
+
+                    if (t instanceof Hydra) {
+                        stat += (t.getBaseDamage() / 10) * ((Hydra) t).headCount;
+                    }
                 }
 
 
