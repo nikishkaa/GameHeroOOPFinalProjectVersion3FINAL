@@ -1,10 +1,7 @@
 package by.itstep.goutor.finaloopproject.util.creators;
 
 import by.itstep.goutor.finaloopproject.model.entity.artifact.*;
-import by.itstep.goutor.finaloopproject.util.creators.artifaactcreator.BigAxeCreator;
-import by.itstep.goutor.finaloopproject.util.creators.artifaactcreator.BloodMascotCreator;
-import by.itstep.goutor.finaloopproject.util.creators.artifaactcreator.GoldenRingCreator;
-import by.itstep.goutor.finaloopproject.util.creators.artifaactcreator.RingCreator;
+import by.itstep.goutor.finaloopproject.util.creators.artifaactcreator.*;
 
 import java.util.List;
 
@@ -22,8 +19,11 @@ public class ArtifactListCreator {
     RingCreator ringCreator = new RingCreator();
     Ring ring = ringCreator.create();
 
+    GraceOfTheErdTreeCreator graceOfTheErdTreeCreator = new GraceOfTheErdTreeCreator();
+    GraceOfTheErdTree graceOfTheErdTree = graceOfTheErdTreeCreator.create();
+
     // List.of - Создание неизменяемого списка.
-    private final List<Artifact> artifacts = List.of(bigAxe, bloodMascot, goldenRing, ring);
+    private final List<Artifact> artifacts = List.of(bigAxe, bloodMascot, goldenRing, ring, graceOfTheErdTree);
 
     public List<Artifact> getArtifacts() {
         return artifacts;
