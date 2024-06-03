@@ -16,7 +16,7 @@ public class Group {
     }
 
 
-    public Entity[] getGroup() {
+    public Entity[] getEntity() {
         return entity;
     }
 

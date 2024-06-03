@@ -13,7 +13,7 @@ public class GameManager {
     // Calculate win or no hero with a start staff
     public static boolean calculateVinHeroBoosWithStartStaff(Group hero, Group boss) {
         if (hero == null || boss == null || Group.DEFAULT_SIZE == 0
-                || hero.getGroup().length == 0 || boss.getGroup().length == 0) {
+                || hero.getEntity().length == 0 || boss.getEntity().length == 0) {
             LOGGER.warn("hero == null || boss == null || Group.DEFAULT_SIZE == 0");
             return false;
         }
@@ -44,7 +44,7 @@ public class GameManager {
     // Getter for min artifact to win |
     public static Artifact getMinStatArtifact(List<Artifact> artifacts, Group hero, Group boss) {
         if (hero == null || boss == null || Group.DEFAULT_SIZE == 0
-                || hero.getGroup().length == 0 || boss.getGroup().length == 0) {
+                || hero.getEntity().length == 0 || boss.getEntity().length == 0) {
             LOGGER.warn("hero == null || boss == null || Group.DEFAULT_SIZE == 0");
         }
 
@@ -55,7 +55,7 @@ public class GameManager {
     // Calculate entity total stats
     private static int calculateVinStat(Group group) {
         int stat = 0;
-        for (Entity t : group.getGroup()) {
+        for (Entity t : group.getEntity()) {
             if (t.isAlive()) {
                 stat += t.getBaseDamage();
                 stat += calcHeroStat(t);
