@@ -22,8 +22,11 @@ public class ArtifactListCreator {
     GraceOfTheErdTreeCreator graceOfTheErdTreeCreator = new GraceOfTheErdTreeCreator();
     GraceOfTheErdTree graceOfTheErdTree = graceOfTheErdTreeCreator.create();
 
+    CreativeArtifactCreator creativeArtifactCreator = new CreativeArtifactCreator();
+    CreativeArtifact creativeArtifact = creativeArtifactCreator.create();
+
     // List.of - Создание неизменяемого списка.
-    private final List<Artifact> artifacts = List.of(bigAxe, bloodMascot, goldenRing, ring, graceOfTheErdTree);
+    private final List<Artifact> artifacts = List.of(bigAxe, bloodMascot, goldenRing, ring, graceOfTheErdTree, creativeArtifact);
 
     public List<Artifact> getArtifacts() {
         return artifacts;
