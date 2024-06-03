@@ -14,6 +14,6 @@ public class CreativeArtifact extends Artifact {
 
     @Override
     public String toString() {
-        return "CreativeArtifact " + "Description = " + Description;
+        return "Creative artifact " + "Description = " + Description;
     }
 }
