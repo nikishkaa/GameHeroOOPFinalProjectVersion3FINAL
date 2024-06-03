@@ -39,7 +39,11 @@ public class Main {
 
         LOGGER.info(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
 
-        String filaName = "D:/прога/entity.dat";
-        EntityBinaryWorker.serialize(filaName, heroGroup);
+        String entityFilaName = "D:/прога/entityHero.dat";
+        String bossFilaName = "D:/прога/entityBoss.dat";
+
+        EntityBinaryWorker.entitySerialize(entityFilaName, heroGroup);
+        EntityBinaryWorker.entitySerialize(bossFilaName, bossGroup);
+
     }
 }
