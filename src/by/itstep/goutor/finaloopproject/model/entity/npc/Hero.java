@@ -101,6 +101,9 @@ public class Hero extends Entity {
         }
     }
 
+    public Ability getAbility() {
+        return ability;
+    }
 
     @Override
     public String toString() {
