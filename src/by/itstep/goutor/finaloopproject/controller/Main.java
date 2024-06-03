@@ -3,6 +3,7 @@ package by.itstep.goutor.finaloopproject.controller;
 import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.logic.GameManager;
+import by.itstep.goutor.finaloopproject.util.EntityBinaryWorker;
 import by.itstep.goutor.finaloopproject.util.creators.ArtifactListCreator;
 import by.itstep.goutor.finaloopproject.util.creators.EntityCreator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
@@ -37,5 +38,8 @@ public class Main {
         Printer.print(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
 
         LOGGER.info(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
+
+        String filaName = "D:/прога/entity.dat";
+        EntityBinaryWorker.serialize(filaName, heroGroup);
     }
 }
