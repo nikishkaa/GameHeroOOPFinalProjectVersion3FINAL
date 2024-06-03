@@ -11,14 +11,14 @@ import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
 public class GameManager {
     // Calculate win or no hero with a start staff
-    public static boolean getVinHeroBoosWithStartStaff(Group hero, Group boss) {
+    public static boolean calculateVinHeroBoosWithStartStaff(Group hero, Group boss) {
         if (hero == null || boss == null || Group.DEFAULT_SIZE == 0
                 || hero.getGroup().length == 0 || boss.getGroup().length == 0) {
             LOGGER.warn("hero == null || boss == null || Group.DEFAULT_SIZE == 0");
             return false;
         }
 
-        return getVinStat(hero) > getVinStat(boss);
+        return calculateVinStat(hero) > calculateVinStat(boss);
     }
 
 
@@ -26,8 +26,8 @@ public class GameManager {
     private static Artifact findMinStatArtifact(List<Artifact> artifacts, Group hero, Group boss) {
         Artifact minStatArtifactUp = null;
 
-        int heroVinStat = getVinStat(hero);
-        int bossVinStat = getVinStat(boss);
+        int heroVinStat = calculateVinStat(hero);
+        int bossVinStat = calculateVinStat(boss);
 
         for (Artifact artifact : artifacts) {
             if (heroVinStat + artifact.getArtifactDamage() > bossVinStat) {
@@ -53,45 +53,52 @@ public class GameManager {
 
 
     // Calculate entity total stats
-    private static int getVinStat(Group group) {
+    private static int calculateVinStat(Group group) {
         int stat = 0;
         for (Entity t : group.getGroup()) {
             if (t.isAlive()) {
                 stat += t.getBaseDamage();
-
-                if (t instanceof Hero) {
-                    stat += ((Hero) t).getSpecialDamage();
-                    stat += ((Hero) t).getArtifactDamage();
-
-                    if (t instanceof Knight) {
-                        stat += ((Knight) t).getKnightDamage();
-                    }
-
-                    if (t instanceof Archer) {
-                        stat += ((Archer) t).getArcherDamage();
-                    }
-
-                }
-
-
-                if (t instanceof Boss) {
-                    stat += ((Boss) t).getSurvivability();
-
-                    if (t instanceof Dragon) {
-                        stat += ((Dragon) t).getFireDamage();
-                    }
-
-                    if (t instanceof Hydra) {
-                        stat += (t.getBaseDamage() / 10) * ((Hydra) t).headCount;
-                    }
-                }
-
+                stat += calcHeroStat(t);
+                stat += calcBossStat(t);
             } else {
                 stat = 0;
-
             }
         }
+        return stat;
+    }
 
+    // Calculate hero stat
+    private static int calcHeroStat(Entity t) {
+        int stat = 0;
+        if (t instanceof Hero) {
+            stat += ((Hero) t).getSpecialDamage();
+            stat += ((Hero) t).getArtifactDamage();
+
+            if (t instanceof Knight) {
+                stat += ((Knight) t).getKnightDamage();
+            }
+
+            if (t instanceof Archer) {
+                stat += ((Archer) t).getArcherDamage();
+            }
+        }
+        return stat;
+    }
+
+    // Calculate boss stat
+    private static int calcBossStat(Entity t) {
+        int stat = 0;
+        if (t instanceof Boss) {
+            stat += ((Boss) t).getSurvivability();
+
+            if (t instanceof Dragon) {
+                stat += ((Dragon) t).getFireDamage();
+            }
+
+            if (t instanceof Hydra) {
+                stat += (t.getBaseDamage() / 10) * ((Hydra) t).headCount;
+            }
+        }
         return stat;
     }
 

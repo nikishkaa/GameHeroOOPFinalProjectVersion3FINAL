@@ -1,17 +1,17 @@
 package by.itstep.goutor.finaloopproject.controller;
 
-import by.itstep.goutor.finaloopproject.model.entity.ability.Ability;
-import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
+import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Archer;
-import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 import by.itstep.goutor.finaloopproject.model.logic.GameManager;
+import by.itstep.goutor.finaloopproject.util.creators.ArtifactListCreator;
 import by.itstep.goutor.finaloopproject.util.creators.EntityCreator;
 import by.itstep.goutor.finaloopproject.util.UserUI;
 import by.itstep.goutor.finaloopproject.view.Printer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+
+import java.util.List;
 
 public class Main {
     public static final Logger LOGGER;
@@ -22,46 +22,20 @@ public class Main {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        LOGGER.setLevel(Level.ALL);
+        LOGGER.setLevel(Level.OFF);
 
         Group heroGroup = EntityCreator.getHeroGroup();
         Group bossGroup = EntityCreator.getBossGroup();
 
-        boolean vinWithStartStaff = GameManager.getVinHeroBoosWithStartStaff(heroGroup, bossGroup);
+        ArtifactListCreator artifactListCreator = new ArtifactListCreator();
+        List<Artifact> artifacts = artifactListCreator.getArtifacts();
 
+        boolean vinWithStartStaff = GameManager.calculateVinHeroBoosWithStartStaff(heroGroup, bossGroup);
+        Artifact minStatArtifactUp = GameManager.getMinStatArtifact(artifacts, heroGroup, bossGroup);
 
         Printer.print(heroGroup.toString() + bossGroup);
-        Printer.print(UserUI.getUserUI(vinWithStartStaff));
+        Printer.print(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
 
-        LOGGER.info(UserUI.getUserUI(vinWithStartStaff));
-
-
-        /*
-        For test
-        */
-
-        Archer archer1 = new Archer("123", true, 100,
-                100, 100, 100, 10, 2
-                , 2, 2);
-
-
-        BigAxe bigAxe = new BigAxe("123", 10, 2, 4, 10);
-        Ability ability = Ability.FLYING;
-
-
-        archer1.setArtifact(bigAxe);
-        archer1.setAbility(ability);
-
-
-        Entity[] npcs = new Entity[]{archer1};
-        Group group = new Group(npcs);
-
-
-//        int a = GameManager.getVinStats(group);
-
-
-        System.out.println(group);
-//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + a);
-
+        LOGGER.info(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
     }
 }

@@ -14,7 +14,8 @@ public class UserUI {
 
         BUILDER.append("\nWin hero bosses with start staff? ")
                 .append(vinWithStartStaff ? "Yes" : "No")
-                .append("\nMin artifact to hero win: ").append(minStatArtifactUp.getName());
+                .append("\nMin artifact to hero win: ").append(minStatArtifactUp.getName())
+                .append("\n");
 
 
         return BUILDER.toString();
