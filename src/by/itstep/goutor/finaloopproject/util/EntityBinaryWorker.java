@@ -1,14 +1,18 @@
 package by.itstep.goutor.finaloopproject.util;
 
+import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
+import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.*;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
 public class EntityBinaryWorker implements Serializable {
-    public static void serialize(String fileName, Group group) {
+    public static void entitySerialize(String fileName, Group group) {
         Writer stream = null;
         try {
 
@@ -93,6 +97,68 @@ public class EntityBinaryWorker implements Serializable {
     private static void serializeHydraAttribute(Writer stream, Entity entity) throws IOException {
         if (entity instanceof Hydra) {
             stream.write(((Hydra) entity).getHeadCount() + "\n");
+        }
+    }
+
+
+//    public static List<Entity> read(String fileName) {
+//        BufferedReader stream = null;
+//        List<Entity> list = new ArrayList<>();
+//
+//        try {
+//            stream = new BufferedReader(new FileReader(fileName));
+//
+//            while (true) {
+//
+//            }
+//
+//        } catch (IOException exception) {
+//        } finally {
+//
+//        }
+//
+//        return list;
+//    }
+
+
+    public static void amuletSerialize(String fileName, List<Artifact> artifacts) {
+        Writer stream = null;
+        try {
+            stream = new BufferedWriter(new FileWriter(fileName));
+
+
+            for (int i = 0; i < artifacts.size(); i++) {
+                Artifact artifact = artifacts.get(i);
+                stream.write(artifact.getName() + "\n");
+                stream.write(artifact.getPrice() + "\n");
+                stream.write(artifact.getSlot() + "\n");
+                stream.write(artifact.getArtifactDamage() + "\n");
+
+                getSerBigAxe(stream, artifact);
+
+            }
+
+        } catch (IOException exception) {
+            System.out.println(exception);
+            LOGGER.fatal(exception);
+        } finally {
+            try {
+                if (stream != null) {
+                    stream.flush();
+                    stream.close();
+                }
+            } catch (IOException exception) {
+                System.out.println(exception);
+                LOGGER.fatal(exception);
+            }
+
+        }
+
+    }
+
+    private static void getSerBigAxe(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof BigAxe) {
+            stream.write(((BigAxe) artifact).getAttackSpeed() + "\n");
         }
     }
 
