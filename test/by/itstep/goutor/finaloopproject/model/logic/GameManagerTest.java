@@ -14,7 +14,7 @@ public class GameManagerTest {
         Group boss = null;
         boolean expected = false;
 
-        boolean actual = GameManager.getVinHeroBoosWithStartStaff(hero, boss);
+        boolean actual = GameManager.calculateVinHeroBoosWithStartStaff(hero, boss);
 
         assertEquals(expected, actual);
     }
@@ -26,7 +26,7 @@ public class GameManagerTest {
 
         boolean expected = false;
 
-        boolean actual = GameManager.getVinHeroBoosWithStartStaff(group1, group2);
+        boolean actual = GameManager.calculateVinHeroBoosWithStartStaff(group1, group2);
 
         assertEquals(expected, actual);
 
