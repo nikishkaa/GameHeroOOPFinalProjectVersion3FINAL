@@ -1,7 +1,6 @@
 package by.itstep.goutor.finaloopproject.util;
 
-import by.itstep.goutor.finaloopproject.model.entity.artifact.Artifact;
-import by.itstep.goutor.finaloopproject.model.entity.artifact.BigAxe;
+import by.itstep.goutor.finaloopproject.model.entity.artifact.*;
 import by.itstep.goutor.finaloopproject.model.entity.container.Group;
 import by.itstep.goutor.finaloopproject.model.entity.npc.*;
 
@@ -129,13 +128,18 @@ public class EntityBinaryWorker implements Serializable {
 
             for (int i = 0; i < artifacts.size(); i++) {
                 Artifact artifact = artifacts.get(i);
+                stream.write(artifact.getClass() + "\n");
                 stream.write(artifact.getName() + "\n");
                 stream.write(artifact.getPrice() + "\n");
                 stream.write(artifact.getSlot() + "\n");
                 stream.write(artifact.getArtifactDamage() + "\n");
 
-                getSerBigAxe(stream, artifact);
-
+                SerializeBigAxe(stream, artifact);
+                SerializeBloodMascot(stream, artifact);
+                SerializeCreativeArtifact(stream, artifact);
+                SerializeGoldenRing(stream, artifact);
+                SerializeGraceOfThreeErd(stream, artifact);
+                SerializeRing(stream, artifact);
             }
 
         } catch (IOException exception) {
@@ -156,10 +160,41 @@ public class EntityBinaryWorker implements Serializable {
 
     }
 
-    private static void getSerBigAxe(Writer stream, Artifact artifact) throws IOException {
+    private static void SerializeBigAxe(Writer stream, Artifact artifact) throws IOException {
         if (artifact instanceof BigAxe) {
             stream.write(((BigAxe) artifact).getAttackSpeed() + "\n");
         }
     }
+
+    private static void SerializeBloodMascot(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof BloodMascot) {
+            stream.write(((BloodMascot) artifact).getHealthUp() + "\n");
+        }
+    }
+
+    private static void SerializeCreativeArtifact(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof CreativeArtifact) {
+            stream.write(CreativeArtifact.getDescription() + "\n");
+        }
+    }
+
+    private static void SerializeGoldenRing(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof GoldenRing) {
+            stream.write(((GoldenRing) artifact).getManaUp() + "\n");
+        }
+    }
+
+    private static void SerializeGraceOfThreeErd(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof GraceOfTheErdTree) {
+            stream.write(((GraceOfTheErdTree) artifact).getUsabilityLevel() + "\n");
+        }
+    }
+
+    private static void SerializeRing(Writer stream, Artifact artifact) throws IOException {
+        if (artifact instanceof Ring) {
+            stream.write(((Ring) artifact).getManaUp() + "\n");
+        }
+    }
+
 
 }
