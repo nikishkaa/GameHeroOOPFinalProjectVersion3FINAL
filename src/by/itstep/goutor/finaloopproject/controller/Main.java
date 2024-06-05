@@ -31,6 +31,7 @@ public class Main {
         ArtifactListCreator artifactListCreator = new ArtifactListCreator();
         List<Artifact> artifacts = artifactListCreator.getArtifacts();
 
+
         boolean vinWithStartStaff = GameManager.calculateVinHeroBoosWithStartStaff(heroGroup, bossGroup);
         Artifact minStatArtifactUp = GameManager.getMinStatArtifact(artifacts, heroGroup, bossGroup);
 
