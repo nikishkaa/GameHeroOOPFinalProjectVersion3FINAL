@@ -100,24 +100,66 @@ public class EntityBinaryWorker implements Serializable {
     }
 
 
-//    public static List<Entity> read(String fileName) {
-//        BufferedReader stream = null;
-//        List<Entity> list = new ArrayList<>();
-//
-//        try {
-//            stream = new BufferedReader(new FileReader(fileName));
-//
-//            while (true) {
-//
-//            }
-//
-//        } catch (IOException exception) {
-//        } finally {
-//
-//        }
-//
-//        return list;
-//    }
+    public static List<Entity> read(String fileName) {
+        BufferedReader stream = null;
+        List<Entity> list = new ArrayList<>();
+        String line;
+        try {
+            stream = new BufferedReader(new FileReader(fileName));
+
+            while ((line = reader.readLine()) != null) {
+                String entityType = line.trim();
+                String name = reader.readLine().trim();
+                boolean isAlive = Boolean.parseBoolean(reader.readLine().trim());
+                int health = Integer.parseInt(reader.readLine().trim());
+                int level = Integer.parseInt(reader.readLine().trim());
+                int baseDamage = Integer.parseInt(reader.readLine().trim());
+
+                Entity entity = null;
+
+                switch (entityType) {
+                    case "Hero":
+                        int mana = Integer.parseInt(reader.readLine().trim());
+                        int wallet = Integer.parseInt(reader.readLine().trim());
+                        int specialDamage = Integer.parseInt(reader.readLine().trim());
+                        int artifactSlot = Integer.parseInt(reader.readLine().trim());
+                        int artifactDamage = Integer.parseInt(reader.readLine().trim());
+                        String artifact = reader.readLine().trim();
+                        String ability = reader.readLine().trim();
+                        entity = new Hero(name, isAlive, health, level, baseDamage, mana, wallet, specialDamage, artifactSlot, artifactDamage, artifact, ability);
+                        break;
+                    case "Archer":
+                        int archerDamage = Integer.parseInt(reader.readLine().trim());
+                        entity = new Archer(name, isAlive, health, level, baseDamage, archerDamage);
+                        break;
+                    int knightDamage = Integer.parseInt(reader.readLine().trim());
+                    entity = new Knight(name, isAlive, health, level, baseDamage, knightDamage);
+                    break;
+                    case "Boss":
+                        int survivability = Integer.parseInt(reader.readLine().trim());
+                        entity = new Boss(name, isAlive, health, level, baseDamage, survivability);
+                        break;
+                    case "Dragon":
+                        int fireDamage = Integer.parseInt(reader.readLine().trim());
+                        int fireRange = Integer.parseInt(reader.readLine().trim());
+                        entity = new Dragon(name, isAlive, health, level, baseDamage, fireDamage, fireRange);
+                        break;
+                    case "Hydra":
+                        int headCount = Integer.parseInt(reader.readLine().trim());
+                        entity = new Hydra(name, isAlive, health, level, baseDamage, headCount);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Unknown entity type: " + entityType);
+                }
+                entities.add(entity);
+            }
+        } catch (IOException exception) {
+        } finally {
+
+        }
+
+        return list;
+    }
 
 
     public static void amuletSerialize(String fileName, List<Artifact> artifacts) {
