@@ -48,7 +48,7 @@ public class EntityBinaryWorker implements Serializable {
     }
 
     private static void serializeCommonAttribute(Writer stream, Entity entity) throws IOException {
-        stream.write(entity.getClass() + "\n");
+//        stream.write(entity.getClass() + "\n");
         stream.write(entity.getName() + "\n");
         stream.write(entity.isAlive() + "\n");
         stream.write(entity.getHealth() + "\n");
@@ -103,62 +103,49 @@ public class EntityBinaryWorker implements Serializable {
     public static List<Entity> read(String fileName) {
         BufferedReader stream = null;
         List<Entity> list = new ArrayList<>();
-        String line;
+
         try {
             stream = new BufferedReader(new FileReader(fileName));
+            while (true) {
 
-            while ((line = reader.readLine()) != null) {
-                String entityType = line.trim();
-                String name = reader.readLine().trim();
-                boolean isAlive = Boolean.parseBoolean(reader.readLine().trim());
-                int health = Integer.parseInt(reader.readLine().trim());
-                int level = Integer.parseInt(reader.readLine().trim());
-                int baseDamage = Integer.parseInt(reader.readLine().trim());
+//
 
-                Entity entity = null;
 
-                switch (entityType) {
-                    case "Hero":
-                        int mana = Integer.parseInt(reader.readLine().trim());
-                        int wallet = Integer.parseInt(reader.readLine().trim());
-                        int specialDamage = Integer.parseInt(reader.readLine().trim());
-                        int artifactSlot = Integer.parseInt(reader.readLine().trim());
-                        int artifactDamage = Integer.parseInt(reader.readLine().trim());
-                        String artifact = reader.readLine().trim();
-                        String ability = reader.readLine().trim();
-                        entity = new Hero(name, isAlive, health, level, baseDamage, mana, wallet, specialDamage, artifactSlot, artifactDamage, artifact, ability);
-                        break;
-                    case "Archer":
-                        int archerDamage = Integer.parseInt(reader.readLine().trim());
-                        entity = new Archer(name, isAlive, health, level, baseDamage, archerDamage);
-                        break;
-                    int knightDamage = Integer.parseInt(reader.readLine().trim());
-                    entity = new Knight(name, isAlive, health, level, baseDamage, knightDamage);
-                    break;
-                    case "Boss":
-                        int survivability = Integer.parseInt(reader.readLine().trim());
-                        entity = new Boss(name, isAlive, health, level, baseDamage, survivability);
-                        break;
-                    case "Dragon":
-                        int fireDamage = Integer.parseInt(reader.readLine().trim());
-                        int fireRange = Integer.parseInt(reader.readLine().trim());
-                        entity = new Dragon(name, isAlive, health, level, baseDamage, fireDamage, fireRange);
-                        break;
-                    case "Hydra":
-                        int headCount = Integer.parseInt(reader.readLine().trim());
-                        entity = new Hydra(name, isAlive, health, level, baseDamage, headCount);
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Unknown entity type: " + entityType);
-                }
-                entities.add(entity);
+//
+
+
+//
+
+
+//
+
+
+//
+
             }
-        } catch (IOException exception) {
-        } finally {
 
+        } catch (IOException exception) {
+            System.out.println(exception);
+            LOGGER.fatal(exception);
+        } finally {
+            try {
+                if (stream != null) {
+                    stream.close();
+                }
+            } catch (IOException exception) {
+                System.out.println(exception);
+                LOGGER.fatal(exception);
+            }
         }
 
+
         return list;
+    }
+
+    public static Knight createKnight() {
+        Knight knight = new Knight();
+
+        return knight;
     }
 
 
@@ -170,7 +157,7 @@ public class EntityBinaryWorker implements Serializable {
 
             for (int i = 0; i < artifacts.size(); i++) {
                 Artifact artifact = artifacts.get(i);
-                stream.write(artifact.getClass() + "\n");
+//                stream.write(artifact.getClass() + "\n");
                 stream.write(artifact.getName() + "\n");
                 stream.write(artifact.getPrice() + "\n");
                 stream.write(artifact.getSlot() + "\n");
