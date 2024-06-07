@@ -11,17 +11,17 @@ import static by.itstep.goutor.finaloopproject.controller.Main.LOGGER;
 
 public class EntityCreator {
     public static Group getHeroGroup() {
-            // Create person
+        // Create person
         Archer archer1 = new Archer("123", true, 100,
-                100, 100, 100, 10, 10
+                100, 100, 100, RndInit.getHeroMoney(), 10
                 , 2, 2);
 
         Knight knight1 = new Knight("123", true, 100,
-                100, 100, 100, 10, 10
+                100, 100, 100, RndInit.getHeroMoney(), 10
                 , 2, 3);
 
 
-            // Giv person ability
+        // Giv person ability
         knight1.setAbility(Ability.FLYING);
 
 //              // Giv person creative artifact (only for test)
@@ -30,10 +30,10 @@ public class EntityCreator {
 //        archer1.setArtifact(creativeArtifact);
 
 
-            // Create array person
+        // Create array person
         Entity[] npcGroup = new Entity[]{archer1, knight1};
 
-            // Create container with person
+        // Create container with person
         Group heroGroup = new Group(npcGroup);
         LOGGER.info(heroGroup);
 

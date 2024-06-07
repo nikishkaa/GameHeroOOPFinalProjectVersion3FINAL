@@ -14,4 +14,10 @@ public class RndInit {
 
         return RANDOM.nextInt(50 + 1) + 100;
     }
+
+
+    public static int getHeroMoney() {
+//        Rnd number 20 - 30
+        return RANDOM.nextInt(10 + 1) + 20;
+    }
 }
