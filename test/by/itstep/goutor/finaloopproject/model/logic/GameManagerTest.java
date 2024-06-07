@@ -19,6 +19,7 @@ public class GameManagerTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
     public void getVinHeroBoosWithStartStaffByGroupNullLength() {
         Group group1 = new Group();
