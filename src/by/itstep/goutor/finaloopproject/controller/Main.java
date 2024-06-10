@@ -36,6 +36,7 @@ public class Main {
         boolean vinWithStartStaff = GameManager.calculateVinHeroBoosWithStartStaff(heroGroup, bossGroup);
         Artifact minStatArtifactUp = GameManager.getMinStatArtifact(artifacts, heroGroup, bossGroup);
 
+
         Printer.print(heroGroup.toString() + bossGroup);
         Printer.print(UserUI.getUserUI(vinWithStartStaff, minStatArtifactUp));
 
