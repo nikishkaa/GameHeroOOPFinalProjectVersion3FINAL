@@ -5,7 +5,7 @@ import by.itstep.goutor.finaloopproject.model.entity.npc.Entity;
 public class Group {
     public static final int DEFAULT_SIZE = 10;
 
-    private  final Entity[] entity;
+    private final Entity[] entity;
 
     public Group() {
         entity = new Entity[DEFAULT_SIZE];
