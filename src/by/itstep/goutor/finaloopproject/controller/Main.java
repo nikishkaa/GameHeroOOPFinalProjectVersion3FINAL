@@ -21,7 +21,6 @@ public class Main {
         LOGGER = Logger.getRootLogger();
     }
 
-
     public static void main(String[] args) {
         BasicConfigurator.configure();
         LOGGER.setLevel(Level.OFF);
