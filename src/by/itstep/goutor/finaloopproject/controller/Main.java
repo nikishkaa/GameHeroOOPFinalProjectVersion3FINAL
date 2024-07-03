@@ -25,7 +25,6 @@ public class Main {
         BasicConfigurator.configure();
         LOGGER.setLevel(Level.OFF);
 
-
         Group heroGroup = EntityCreator.getHeroGroup();
         Group bossGroup = EntityCreator.getBossGroup();
 
